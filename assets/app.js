@@ -4,7 +4,9 @@ var map = new GMaps({
   el: '#map',
   lat: -12.045746309051966,
   lng: -77.03053241139217,
-  zoom: 17
+  zoom: 17,
+  disableDefaultUI: true,
+  zoomControl: true
 });
 
 var InfoAside = Parse.View.extend({
