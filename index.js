@@ -1,5 +1,5 @@
 var Hapi = require('hapi'),
-    server = new Hapi.Server(8000, {
+    server = new Hapi.Server((process.env.PORT || 5000), {
       views: {
         engines: {
           html: require('handlebars')
