@@ -9,16 +9,31 @@ var map = new GMaps({
 
 var InfoAside = Parse.View.extend({
   el: '#info',
-  render: function() {}
+  render: function() {
+    $('#name').text(this.model.get('espacio') + ' ' + this.model.get('nombre'));
+
+    if (this.model.has('trazado')) {
+      $('#year').text(this.model.get('trazado'));
+    }
+  }
 });
 
 var infoAside = new InfoAside();
 
 function toggleInfoAside(e) {
-  $('#map').toggleClass('with_info');
-  $('#info').toggleClass('expanded');
+  if (infoAside.model === undefined) {
+    $('#map').addClass('with_info');
+    $('#info').addClass('expanded');
+  }
+  else {
+    if (infoAside.model === e.details) {
+      $('#map').toggleClass('with_info');
+      $('#info').toggleClass('expanded');
+    }
+  }
 
   infoAside.model = e.details;
+  infoAside.render();
 
   setTimeout(function() {
     map.refresh();
