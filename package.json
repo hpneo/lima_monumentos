@@ -1,0 +1,19 @@
+{
+  "name": "lima_monumentos",
+  "version": "0.1.0",
+  "description": "Guía de monumentos de Lima",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
+  "author": "Gustavo Leon",
+  "license": "MIT",
+  "dependencies": {
+    "handlebars": "*",
+    "hapi": "^6.8.1",
+    "parse": "^1.2.19"
+  }
+}
