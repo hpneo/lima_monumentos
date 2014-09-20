@@ -9,11 +9,13 @@ html, body {
   padding: 0;
   font-family: 'PT Sans', sans-serif;
   font-weight: 400;
+  overflow: hidden;
 }
 
 body {
   display: flex;
   flex-direction: column;
+  font-size: 62.7%;
 }
 
 header, footer {
@@ -59,6 +61,11 @@ header h1 {
   height: 50%;
 }
 
+#info header h2, #info header h3 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
 #main #info h2, #main #info h3 {
   margin: 10px;
 }
@@ -66,4 +73,21 @@ header h1 {
 #main #info h3 {
   font-style: italic;
   font-weight: 400;
+  margin-left: 0px;
+}
+
+#main #info ul {
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+#main #info ul li {
+  display: block;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background: #34495E;
 }

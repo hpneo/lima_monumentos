@@ -22,6 +22,11 @@ var InfoAside = Parse.View.extend({
 
 var infoAside = new InfoAside();
 
+function hideInfoAside() {
+  $('#map').removeClass('with_info');
+  $('#info').removeClass('expanded');
+}
+
 function toggleInfoAside(e) {
   if (infoAside.model === undefined) {
     $('#map').addClass('with_info');
@@ -60,3 +65,13 @@ var UrbanMonumentalEnvironment = Parse.Object.extend("UrbanMonumentalEnvironment
 var query = new Parse.Query(UrbanMonumentalEnvironment);
 
 query.find().done(populateList);
+
+$(document).on('click', '#see_360', function(e) {
+  var streetView = map.getStreetView();
+  streetView.setPosition(map.getCenter())
+  streetView.setVisible(true);
+});
+
+$(document).on('click', '#close_info', function(e) {
+  hideInfoAside();
+});
