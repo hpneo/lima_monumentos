@@ -13,7 +13,7 @@
   "license": "MIT",
   "dependencies": {
     "handlebars": "*",
-    "hapi": "^6.8.1",
+    "hapi": "^18.1.0",
     "parse": "^2.15.0"
   }
 }
